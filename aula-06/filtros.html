@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="Filtros">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script>
+    var filtrosModule = angular.module('Filtros', []);
+    filtrosModule.filter('reverse', function(){
+        return function(input, lowercase, end) {
+            input = input || '';
+            out = '';
+            for (var i = 0; i < input.length; i++) {
+                out = input.charAt(i)+out;
+            }
+            if(lowercase) {
+                out = out.toLowerCase()
+            }
+            end = end||'';
+            return out+end;
+        }
+    });
+    filtrosModule.controller('filtrosController', function($scope){
+        $scope.texto = "Rodrigo Gattermann";
+    });
+    </script>
+</head>
+<body>
+    <p ng-controller="filtrosController">
+        {{texto | reverse: false:'<-'}}
+    </p>
+</body>
+</html>

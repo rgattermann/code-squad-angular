@@ -8,12 +8,15 @@
     var filtros = angular.module('Filtros', []);
     filtros.controller('filtrosController', function($scope){
         $scope.numero = 100;
+        $scope.texto = "Rodrigo Gattermann";
     });
     </script>
 </head>
 <body>
     <p ng-controller="filtrosController">
-        {{numero | number:2}}
+        {{numero | number:2}} <br>
+        {{numero | currency: "R$":3}} <br>
+        {{texto | uppercase}}
     </p>
 </body>
 </html>
