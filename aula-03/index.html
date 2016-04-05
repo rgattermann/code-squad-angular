@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="listaController">
+        <ul ng-repeat="tarefa in tarefas">
+            <li>
+                {{tarefa.prioridade}} - {{tarefa.nome}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<!--
+    Two-Way Data bind - Atualziar a Model e a View
+    HMVC -  um MVC  dentro de um modulo
+-->
