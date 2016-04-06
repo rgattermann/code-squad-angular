@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="listaController">
+        <ul ng-repeat="tarefa in tarefas">
+            <li my-tarefas type="nome"></li>
+            <li my-tarefas type="prioridade"></li>
+        </ul>
+    </div>
+</body>
+</html>

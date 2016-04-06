@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+        .css-form input.ng-invalid {
+            background-color: #FA787E;
+        }
+        .css-form input.ng-valid {
+            background-color: #78FA89;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="formularioController">
+        <h1>Formulários</h1>
+        <form ng-submit="salvar()" class="css-form">
+            Nome: <input type="text" ng-model="formulario.nome" required> <br>
+            Email: <input type="email" ng-model="formulario.email" required> <br>
+            Genero:
+                <input type="radio" value="masculino" ng-model="formulario.genero">
+                <input type="radio" value="feminio" ng-model="formulario.genero">
+                <br>
+            <input type="button" value="Reset" ng-click="reset()">
+            <input type="submit" value="Salvar">
+        </form>
+        <hr>
+        <pre>
+            {{formulario}}
+        </pre>
+        <pre>
+            {{salvo}}
+        </pre>
+    </div>
+</body>
+</html>
