@@ -1,0 +1,27 @@
+<h2>Listagem de usuários</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#id</th>
+            <th>nome</th>
+            <th>email</th>
+            <th>senha</th>
+            <th>ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="u in usuarios">
+            <td>{{u.id}}</td>
+            <td>{{u.nome}} {{u.sobrenome}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.senha}}</td>
+            <td>
+                <a href="#/usuarios/{{u.id}}/edita">Editar</a>
+                <a href="" ng-click="remover(u.id)">Remover</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<ul>
+    <li><a href="#/usuarios/add">Novo</a></li>
+</ul>
